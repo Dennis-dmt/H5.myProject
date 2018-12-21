@@ -1,0 +1,191 @@
+@charset "UTF-8";
+/* .box{
+    @include opacity(80);
+}  */
+html, body, ul, li, a, h1, h2, h3, h4, h5, h6, form, dl, dt, dd, fieldset, legend, img, p, span, figure {
+  margin: 0;
+  padding: 0; }
+
+img, fieldset {
+  border: none; }
+
+img {
+  display: block; }
+
+ul, ol {
+  list-style: none; }
+
+address, caption, cite, code, dfn, th, var {
+  font-style: normal;
+  font-weight: normal; }
+
+body {
+  font: 12px/1.5 "微软雅黑";
+  background: #f5f5f5;
+  color: #34495e; }
+
+a {
+  text-decoration: none; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both; }
+
+h1, h2, h3 {
+  font-weight: normal; }
+
+.layout {
+  width: 1180px;
+  margin: 0 auto; }
+
+.layout1 {
+  margin: 0 auto;
+  width: 1010px; }
+
+header {
+  background-color: #222; }
+  header div.nav {
+    position: relative;
+    height: 57px;
+    text-align: center; }
+    header div.nav a {
+      display: block; }
+    header div.nav div.log {
+      position: absolute;
+      float: left; }
+      header div.nav div.log a {
+        width: 182px;
+        height: 68px; }
+    header div.nav div.link_index {
+      float: left;
+      margin-left: 182px; }
+      header div.nav div.link_index a {
+        color: #eee;
+        margin-left: 6px;
+        width: 72px;
+        height: 57px;
+        line-height: 57px; }
+        header div.nav div.link_index a:hover {
+          background-color: #444;
+          color: #fff; }
+    header div.nav span {
+      float: right;
+      color: #fff;
+      height: 57px;
+      line-height: 57px; }
+
+div.main {
+  overflow: hidden;
+  padding: 30px 0 50px; }
+  div.main div.box_img {
+    float: left; }
+  div.main div.box_table {
+    float: right;
+    box-sizing: border-box;
+    width: 382px;
+    height: 452px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(204, 204, 204, 0.5);
+    padding: 15px 30px 0; }
+    div.main div.box_table h2 {
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 5px;
+      margin-bottom: 10px; }
+      div.main div.box_table h2 div.trag {
+        float: right;
+        font-size: 12px;
+        letter-spacing: 0;
+        margin-top: 4px; }
+        div.main div.box_table h2 div.trag a {
+          text-decoration: underline; }
+    div.main div.box_table form {
+      position: relative; }
+      div.main div.box_table form p {
+        overflow: hidden;
+        padding: 6px;
+        border: 1px solid #ccc;
+        margin-bottom: 24px; }
+        div.main div.box_table form p#last {
+          width: 114px; }
+          div.main div.box_table form p#last input {
+            width: 114px; }
+        div.main div.box_table form p#reader {
+          line-height: 17px;
+          height: 17px;
+          border: none;
+          padding: 0; }
+          div.main div.box_table form p#reader #check {
+            width: 13px;
+            height: 13px; }
+        div.main div.box_table form p span {
+          float: left;
+          width: 0px;
+          height: 26px;
+          border-right: 0px solid #ccc;
+          margin-right: 0px; }
+        div.main div.box_table form p input {
+          outline: none;
+          border: none;
+          height: 26px;
+          width: 250px; }
+      div.main div.box_table form a.send-code {
+        text-align: center;
+        color: #666;
+        line-height: 38px;
+        position: absolute;
+        top: 200px;
+        right: 0px;
+        display: inline-block;
+        width: 124px;
+        height: 38px;
+        background-color: #f5f5f5;
+        border-radius: 2px;
+        background-color: #f5f5f5;
+        border: 1px solid #dedede; }
+      div.main div.box_table form div.last {
+        margin-bottom: 30px; }
+        div.main div.box_table form div.last #btn {
+          border: none;
+          width: 320px;
+          height: 50px;
+          border-radius: 5px;
+          background: #ff666b;
+          color: #fff;
+          letter-spacing: 5px;
+          font-size: 18px; }
+
+footer {
+  border-top: 2px solid #ff666b;
+  height: 201px;
+  background: url(../images/footer-bg.jpg) center #32475c;
+  padding-top: 30px; }
+  footer div.foot_main {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto; }
+    footer div.foot_main ul {
+      width: 840px;
+      color: #eee; }
+      footer div.foot_main ul li {
+        height: 18px;
+        line-height: 18px;
+        margin-bottom: 8px; }
+    footer div.foot_main a {
+      color: #eee; }
+      footer div.foot_main a:hover {
+        text-decoration: underline; }
+    footer div.foot_main cite {
+      color: #eee;
+      margin: 0 3px; }
+    footer div.foot_main div.foot_pic a {
+      float: left;
+      margin: 20px 15px 0 0; }
+    footer div.foot_main div.foot_right {
+      position: absolute;
+      top: -30px;
+      right: 60px; }

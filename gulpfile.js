@@ -10,6 +10,11 @@ let sass = require("gulp-sass");  //sass转css
 //     gulp.src("./src/**/*.*").pipe(gulp.dest("./dist"))
 // })
 
+//json-data
+gulp.task("buildJSON",()=>{
+    gulp.src("./src/data/**.*").pipe(gulp.dest("./dist/data"))
+})
+
 //JS
 gulp.task("buildJS",()=>{
     //只复制
@@ -17,10 +22,10 @@ gulp.task("buildJS",()=>{
         .pipe(gulp.dest("./dist/scripts/libs"))
     //gulp.src找到需要被功能的文件路径   pipe管道（功能模块） pipe管道（文件最后目的地）
     gulp.src("./src/scripts/*.js")
-        .pipe(babel({
-            presets: ['env']
-        }))
-        .pipe(uglify())
+        // .pipe(babel({
+        //     presets: ['env']
+        // }))
+        // .pipe(uglify())
         .pipe(gulp.dest("./dist/scripts"))
 })
 
@@ -31,7 +36,12 @@ gulp.task("buildHTML",()=>{
 
 //静态资源
 gulp.task("buildStaticResource",()=>{
-    gulp.src("./src/static/**/*.*").pipe(gulp.dest("./dist"))
+    gulp.src("./src/static/**/*.*").pipe(gulp.dest("./dist/static"))
+})
+
+//图片
+gulp.task("buildImg",()=>{
+    gulp.src("./src/images/**.*").pipe(gulp.dest("./dist/images"))
 })
 
 //CSS
@@ -41,8 +51,8 @@ gulp.task("buildCSS",()=>{
     .pipe(gulp.dest("./dist/styles/libs"))     
     //sass转css再压缩
     gulp.src("./src/**/*.scss")
-    .pipe(sass())
-    .pipe(cleancss())
+    .pipe(sass().on('error', sass.logError))
+    // .pipe(cleancss())
     .pipe(gulp.dest("./dist"))
 })
 
@@ -51,6 +61,7 @@ gulp.task("watching",()=>{
     gulp.watch("./src/**/*.scss",["buildCSS"]);
     gulp.watch("./src/**/*.js",["buildJS"]);
     gulp.watch("./src/**/*.html",["buildHTML"]);
+    gulp.watch("./src/images/**.*",["buildImg"]);
 })
 
 
@@ -62,11 +73,18 @@ gulp.task('webserver',["watching"],()=>{
             directoryListing: true, //目录列表是否要展示
             open: true,     //是否自动打开浏览器
             //https: true,    //是否要https开头
-            proxies:[{
+            proxies:[
+                {
                 source: '/abc',
-				target: 'https://m.lagou.com/listmore.json'
-        }]
-    }));
+                target: 'http://www.lizi.com/common/ajaxSixtySecItems'
+                },
+                {
+                source: '/bbb',
+                target:`http://www.yiguo.com/Handler/InitLayOut`
+                }
+
+            ]
+        }));
 });
 
-gulp.task("build",["buildJS","buildHTML","buildCSS","buildStaticResource"])
+gulp.task("build",["buildJS","buildHTML","buildCSS","buildStaticResource","buildImg","buildJSON"])
